@@ -1,4 +1,4 @@
-## Code ##
+## Solution ##
 
 ```.py
 
