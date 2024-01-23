@@ -1,0 +1,118 @@
+Screen:
+    size: 300, 700
+
+    MDBoxLayout:
+        orientation: "horizontal"
+        pos_hint: {"center_x":0.5, "center_y":0.5}
+        size_hint: .5, .5
+
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDBoxLayout:
+            orientation: "horizontal"
+            size_hint_y: .1
+            md_bg_color: "grey"
+            MyButton:
+            MyButton:
+            MyButton:
+
+        MDBoxLayout:
+            orientation: "horizontal"
+            size_hint_y: .1
+            md_bg_color: "grey"
+            MyButton:
+                text: "AC"
+                font_size: 90
+            MyButton:
+                text: "+/-"
+                font_size: 90
+
+            MyButton:
+                text: "%"
+                font_size: 90
+
+            OrangeButton:
+                text: "÷"
+                font_size: 90
+
+        MDBoxLayout:
+            orientation: "horizontal"
+            size_hint_y: .1
+            md_bg_color: "grey"
+            MyButton:
+                text: "7"
+                font_size: 90
+            MyButton:
+                text: "8"
+                font_size: 90
+            MyButton:
+                text: "9"
+                font_size: 90
+            OrangeButton:
+                text: "x"
+                font_size: 90
+
+        MDBoxLayout:
+            orientation: "horizontal"
+            size_hint_y: .1
+            md_bg_color: "grey"
+            MyButton:
+                text: "4"
+                font_size: 90
+            MyButton:
+                text: "5"
+                font_size: 90
+            MyButton:
+                text: "6"
+                font_size: 90
+            OrangeButton:
+                text: "-"
+                font_size: 90
+
+
+        MDBoxLayout:
+            orientation: "horizontal"
+            size_hint_y: .1
+            md_bg_color: "grey"
+            MyButton:
+                text: "1"
+                font_size: 90
+            MyButton:
+                text: "2"
+                font_size: 90
+            MyButton:
+                text: "3"
+                font_size: 90
+            OrangeButton:
+                text: "+"
+                font_size: 90
+
+        MDBoxLayout:
+            orientation: "horizontal"
+            size_hint_y: .1
+            md_bg_color: "grey"
+            MyButton:
+                text: "0"
+                font_size: 90
+            MyButton:
+                text: "."
+                font_size: 90
+            OrangeButton:
+                text: "="
+                font_size: 90
+
+<MyButton>:
+    size_hint_y: 1
+    size_hint_x: 1
+    md_bg_color: "grey"
+    on_press:
+        app.equation(self)
+
+<OrangeButton>
+    size_hint_y: 1
+    size_hint_x: 1
+    md_bg_color: "orange"
+    text: "hello"
+    on_press:
+        app.equation(self)
