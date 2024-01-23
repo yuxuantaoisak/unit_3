@@ -1,6 +1,8 @@
 Clothing company
 
-Raw materials needed: Shirts, jeckets, bottoms, accessories, etc. 
+Raw materials needed: fiber, polyester, fabric, cotton, etc. 
+
+Product that we make: Shirts, jeckets, bottoms, accessories, etc. 
 
 The company is a reseller so it does not produce clothes, unlike a factory. 
 
