@@ -32,3 +32,11 @@ print(test)
 ## Proof of work ##
 
 <img width="1470" alt="Screenshot 2024-01-19 at 21 09 22" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/8cea3bde-83ae-47ab-9af6-dd5abfae2b08">
+
+
+
+## UML diagram ##
+
+<img width="284" alt="Screenshot 2024-01-29 at 19 48 37" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/c039a823-bb82-4045-a13c-e349d27fd3e0">
+
+
