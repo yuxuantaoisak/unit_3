@@ -23,3 +23,11 @@ print(mystery(a, b))
 
 <img width="1470" alt="Screenshot 2024-01-09 at 16 18 19" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/06fe9808-a190-4a89-9a15-07b6489dc43b">
 
+
+
+## Flowchart ##
+
+
+<img width="355" alt="Screenshot 2024-01-29 at 19 37 13" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/d8bb35ea-97eb-4535-97a7-ad1712639588">
+
+
