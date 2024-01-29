@@ -1,6 +1,7 @@
 ## Solution ##
 
 ```.py
+#quiz_040.py
 
 
 from kivymd.app import MDApp
@@ -26,6 +27,8 @@ test.run()
 
 
 ```.kv
+#quiz_040.kv
+
 
 Screen:
     size: 500, 600
@@ -53,4 +56,8 @@ Screen:
 ## Proof of work ##
 
 https://github.com/yuxuantaoisak/unit_3/assets/144768397/0c965fae-836a-464f-8d14-680974e4f69f
+
+## UML diagram ##
+
+<img width="314" alt="Screenshot 2024-01-29 at 18 43 40" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/56b5db1b-8cbf-46c5-a32c-cf62d12347a7">
 
