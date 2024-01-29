@@ -49,7 +49,7 @@ c.get_map()
 
 ## UML diagram ##
 
-| Class: SalesmanMap                           |
-|----------------------------------------------|
-| self.name = None   self.x = []   self.y = [] |
-| set_names(self, names_2)   get_map(self)     |
+| Class: SalesmanMap                                     |
+|--------------------------------------------------------|
+| self.name = None        self.x = []        self.y = [] |
+| set_names(self, names_2)        get_map(self)          |
