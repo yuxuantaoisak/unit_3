@@ -76,4 +76,7 @@ ScreenManager:
 
 https://github.com/yuxuantaoisak/unit_3/assets/144768397/1322d510-41df-4d1a-832b-60deb8aab91d
 
+## UML diagram ##
+
+<img width="802" alt="Screenshot 2024-01-29 at 19 00 20" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/ae40070e-a119-4f8b-954f-d36475e8652c">
 
