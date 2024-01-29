@@ -65,3 +65,8 @@ Screen:
 
 ![Screenshot 2024-01-25 at 23 41 56](https://github.com/yuxuantaoisak/unit_3/assets/144768397/cd8e1adf-08be-41cf-bce2-fb482fac5a62)
 
+
+
+## UML diagram ##
+
+<img width="565" alt="Screenshot 2024-01-29 at 18 17 31" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/14c6dca3-7506-47aa-a499-881559cc4b77">
