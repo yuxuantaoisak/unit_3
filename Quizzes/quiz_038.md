@@ -49,11 +49,4 @@ c.get_map()
 
 ## UML diagram ##
 
-| Class: SalesmanMap             |
-|--------------------------------|
-| self.name = None               |
-|self.x = []                     |
-|self.y = []                     |
-|--------------------------------|
-|set_names(self, names_2)        |   
-|get_map(self)                   |
+<img width="530" alt="Screenshot 2024-01-29 at 18 15 48" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/407a9a5e-3d38-4d68-bf80-5df233964e8b">
