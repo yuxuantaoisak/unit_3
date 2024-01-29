@@ -59,5 +59,6 @@ https://github.com/yuxuantaoisak/unit_3/assets/144768397/0c965fae-836a-464f-8d14
 
 ## UML diagram ##
 
-<img width="314" alt="Screenshot 2024-01-29 at 18 43 40" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/56b5db1b-8cbf-46c5-a32c-cf62d12347a7">
+
+<img width="302" alt="Screenshot 2024-01-29 at 20 15 40" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/220c8d81-f7d8-4cb2-ae76-4aa8b5b88135">
 
