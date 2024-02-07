@@ -1,15 +1,29 @@
-Clothing company
+# Unit 3: Tracker
 
-Raw materials needed: fiber, polyester, fabric, cotton, etc. 
+## Criteria A: Planning
 
-Product that we make: Shirts, jeckets, bottoms, accessories, etc. 
 
-The company is a reseller so it does not produce clothes, unlike a factory. 
+### Problem Definition
 
-Need to manage the quantity. 
 
-Attributes include brand, color, size, price. 
+My client is a snowboard factory owner. He is passionate about making various kinds of snowboards for snowboarders of all levels. However, he recently encountered some problems with the management of his factory. Because of the increase in the number of clients, he is having some difficulties managing online orders. Besides, he does not like the shape and the design of the cu
 
-The company is in need of a system that helps it manage all the things above for everything to be in control. 
 
-The company is looking for a developer that has knowledge in OOP, who is proficient in any of the programming languages and is open to suggestions and communication. 
+### Proposed Solution
+
+
+### Justification of Tools
+
+
+### Success Criteria
+
+1. Provides a way to create the item
+2. Provides a MONEY TRACKER
+3. Provides an inventory
+4. Provides different access for the company owner and other employees
+5. Provides customization function
+
+## Criteria B: Solution Overview
+
+
+## Criteria C: Development
