@@ -11,6 +11,7 @@ My client is a snowboard factory owner. He is passionate about making various ki
 
 ### Proposed Solution
 
+I will design an application for the client to tracking spendings.
 
 ### Justification of Tools
 
