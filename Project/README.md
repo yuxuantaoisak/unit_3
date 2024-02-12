@@ -18,11 +18,15 @@ I will design an application for the client to tracking spendings.
 
 ### Success Criteria
 
+
+
 1. Provides a way to create the item
 2. Provides a MONEY TRACKER
 3. Provides an inventory
 4. Provides different access for the company owner and other employees
-5. Provides customization function
+5. Provides customization function for customers to change the design
+
+
 
 ## Criteria B: Solution Overview
 
