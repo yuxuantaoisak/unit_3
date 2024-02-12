@@ -46,8 +46,16 @@ SELECT villageid, AVG(gold) from INHABITANT group by villageid;
 
 ## Solution 
 
+```.sql
+
+SELECT * from ITEM WHERE item LIKE 'A%';
+
+```
 
 ## Proof of work
+
+<img width="370" alt="Screenshot 2024-02-13 at 0 05 37" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/0d58a849-15c8-4f3c-af2a-22cd0aaa7c38">
+
 
 # 5, How many different jobs are there?
 
