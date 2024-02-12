@@ -15,7 +15,6 @@
 
 ```.sql
 
-
 SELECT * FROM INHABITANT WHERE gender = 'Male' AND state = 'Friendly';
 
 ```
@@ -31,8 +30,16 @@ SELECT * FROM INHABITANT WHERE gender = 'Male' AND state = 'Friendly';
 
 ## Solution 
 
+```.sql
+
+SELECT villageid, AVG(gold) from INHABITANT group by villageid;
+
+```
 
 ## Proof of work
+
+<img width="662" alt="Screenshot 2024-02-13 at 0 01 00" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/00ce4a12-123b-4752-bcba-1364b7827f04">
+
 
 # 4, How many items are there that start with the letter "A"?
 
