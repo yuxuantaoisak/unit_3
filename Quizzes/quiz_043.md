@@ -6,6 +6,8 @@
 
 ## Proof of work
 
+<img width="300" alt="Screenshot 2024-02-13 at 16 22 36" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/ce1f3bdb-100c-4249-bca2-1ee8b149b004">
+
 
 # 2, How many Male inhabitants are Friendly?
 
@@ -15,7 +17,7 @@
 
 ```.sql
 
-SELECT * FROM INHABITANT WHERE gender = 'Male' AND state = 'Friendly';
+<img width="1470" alt="Screenshot 2024-02-13 at 16 20 05" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/bd43249b-61f2-4fe1-9fc7-ea5a80bf2353">
 
 ```
 
@@ -38,7 +40,7 @@ SELECT villageid, AVG(gold) from INHABITANT group by villageid;
 
 ## Proof of work
 
-<img width="662" alt="Screenshot 2024-02-13 at 0 01 00" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/00ce4a12-123b-4752-bcba-1364b7827f04">
+<img width="1470" alt="Screenshot 2024-02-13 at 16 19 44" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/b5bf8c61-44c0-4f65-ae35-7b7ff4133442">
 
 
 # 4, How many items are there that start with the letter "A"?
@@ -54,7 +56,8 @@ SELECT * from ITEM WHERE item LIKE 'A%';
 
 ## Proof of work
 
-<img width="370" alt="Screenshot 2024-02-13 at 0 05 37" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/0d58a849-15c8-4f3c-af2a-22cd0aaa7c38">
+
+<img width="1470" alt="Screenshot 2024-02-13 at 16 19 13" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/713c8bbb-b24a-47ca-a7b8-85271331fa36">
 
 
 # 5, How many different jobs are there?
@@ -62,15 +65,36 @@ SELECT * from ITEM WHERE item LIKE 'A%';
 
 ## Solution 
 
+```.sql
+
+SELECT distinct job from INHABITANT;
+
+```
 
 ## Proof of work
+
+<img width="1470" alt="Screenshot 2024-02-13 at 15 38 50" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/2df036d7-8362-4a54-8bf5-0d0294f2e218">
 
 
 # 6, What are the items owned by the herbalists?
 
 
-
 ## Solution 
 
 
+
+```.sql
+
+SELECT ITEM.item, INHABITANT.personid
+from INHABITANT
+INNER JOIN ITEM on ITEM.owner = INHABITANT.personid
+WHERE INHABITANT.job = 'Herbalist';
+
+```
+
 ## Proof of work
+
+
+<img width="1470" alt="Screenshot 2024-02-13 at 16 18 45" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/ad261c5a-055e-435b-962b-eac9e01cc14d">
+
+
