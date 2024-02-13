@@ -17,7 +17,7 @@
 
 ```.sql
 
-<img width="1470" alt="Screenshot 2024-02-13 at 16 20 05" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/bd43249b-61f2-4fe1-9fc7-ea5a80bf2353">
+SELECT * FROM INHABITANT WHERE gender = 'Male' AND state = 'Friendly';
 
 ```
 
