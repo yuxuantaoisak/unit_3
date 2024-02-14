@@ -20,11 +20,11 @@ Considering the client's requirements...
 
 
 
-1. Provides a way to create the item
-2. Provides a money tracker
-3. Provides an inventory
-4. Provides different access for the company owner and other employees
-5. Provides customization function for customers to change the design according to their likings
+1. The GUI application provides a window to create snowboards where the user can enter... [issue tackled: ""]
+2. Provides a money tracker 
+3. The database connected to the tracker provides an inventory in which the client can check details of the raw materials [issue tackled: ""]
+4. The GUI application provides different user accesses to the revenue and customer data for the company owner and other employees [issue tackled: ""]
+5. The GUI application provides customization function for customers to change the design of the snowboard according to their likings [issue tackled: ""]
 
 
 
