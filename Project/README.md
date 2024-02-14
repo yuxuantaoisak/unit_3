@@ -6,7 +6,7 @@
 ### Problem Definition
 
 
-My client is a snowboard factory owner. He is passionate about making various kinds of snowboards for snowboarders of all levels. However, he recently encountered some problems with the management of his factory. Because of the increase in the number of clients, he is having some difficulties managing online orders. Besides, he does not like the shape and the design of the current model. He tried to write down order details and distribute these works to his employees everyday, but it does not work anymore with the huge increase in order numbers. If the problem keeps getting worse, my client faces consequences such as losing clients, reputation in the industry, and the customer loyalty that he just built recently. 
+My client is a snowboard factory owner. He is passionate about making various kinds of snowboards for snowboarders of all levels. However, he recently encountered some problems with the management of his factory. Because of the increase in the number of clients, he is having some difficulties managing the online orders. He tried to write down order details for his employees to send packages everyday, but it does not work anymore with the huge increase in order numbers. Moreover, this triggers a problem: the employees now know all the trade secrets of the company, such as private customer data, revenue of the company, etc. If the problem keeps getting worse, my client faces consequences such as losing customers, losing revenue, losing reputation in the industry, and the customer loyalty that he just built recently. Another problem he has is that he does not like the design of the current snowboard model. 
 
 
 ### Proposed Solution
@@ -21,10 +21,10 @@ Considering the client's requirements...
 
 
 1. Provides a way to create the item
-2. Provides a MONEY TRACKER
+2. Provides a money tracker
 3. Provides an inventory
 4. Provides different access for the company owner and other employees
-5. Provides customization function for customers to change the design
+5. Provides customization function for customers to change the design according to their likings
 
 
 
