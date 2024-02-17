@@ -11,10 +11,8 @@ class DatabaseBridge:
         self.connect = sqlite3.connect(self.db_name)
         self.cursor = self.connect.cursor()
 
-
     def close(self):
         self.connect.close()
-
 
     def create(self):
         #anything we need to do at the moment of creating the db
@@ -35,7 +33,7 @@ class DatabaseBridge:
         print("[DatabaseBridge]Inserting into db")
         self.run_query(query=insert_query)
 
-    def search(self, query, multiple:False):
+    def search(self, query, multiple: False):
         #this method runs a query in the db
         #query: the sql command
         #if true: returns multiple rows
@@ -68,7 +66,6 @@ for word in haiku.split():
     my_db.run_query(query=insert_query)
 
 
-
 q = "SELECT avg(length) from WORDS"
 out = my_db.search(query=q, multiple=False)
 my_db.close()
@@ -82,4 +79,7 @@ print("Average word length is", out)
 
 
 ## Proof of work ##
+
+<img width="1470" alt="Screenshot 2024-02-17 at 20 31 48" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/624d5dfd-22aa-4bb1-85a3-9ff702831753">
+
 
