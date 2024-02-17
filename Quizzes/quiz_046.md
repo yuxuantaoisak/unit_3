@@ -4,7 +4,6 @@
 ```.py
 # quiz_046.py
 
-
 import sqlite3
 from kivymd.app import MDApp
 from my_library import DatabaseBridge, get_hash
@@ -44,8 +43,8 @@ class quiz_046(MDApp):
         if base:
             total = int(base)
             hash_str = ""
-            inhabitant = total*(int(self.root.ids.inhabitant.text or '0') // 100)
-            self.root.ids.inhabitant_label.text = f"{inhabitant} JPY"
+            inhabitant = total*int(self.root.ids.inhabitant.text or '0') // 100
+            self.root.ids.inhabitant.hint_text = f"{inhabitant} JPY"
 
             pension = total*int(self.root.ids.pension.text or '0') // 100
             self.root.ids.pension.hint_text = f"{pension} JPY"
@@ -145,15 +144,14 @@ db.close()
 test.run()
 
 
-
 ```
+
 
 
 
 
 ```.kv
 # quiz_046.kv
-
 
 MDScreen:
     id:bck
@@ -331,7 +329,7 @@ MDScreen:
                     app.update()
             MDLabel:
                 id: inhabitant_label
-                text:" JPY"
+                text: " JPY"
                 color: "#9d0208"
 
 
@@ -391,3 +389,9 @@ MDScreen:
 
 
 ## Proof of work
+
+
+
+https://github.com/yuxuantaoisak/unit_3/assets/144768397/d5f4b426-4db3-4bb8-ba87-2fbbad53b72c
+
+
