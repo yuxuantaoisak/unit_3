@@ -395,3 +395,6 @@ MDScreen:
 https://github.com/yuxuantaoisak/unit_3/assets/144768397/d5f4b426-4db3-4bb8-ba87-2fbbad53b72c
 
 
+## UML diagram
+
+<img width="925" alt="Screenshot 2024-02-19 at 22 58 48" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/d8b2ad9a-22b3-4917-bb31-b3680da6e048">
