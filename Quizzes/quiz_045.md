@@ -83,3 +83,7 @@ print("Average word length is", out)
 <img width="1470" alt="Screenshot 2024-02-17 at 20 31 48" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/624d5dfd-22aa-4bb1-85a3-9ff702831753">
 
 
+## UML diagram
+
+<img width="847" alt="Screenshot 2024-02-19 at 22 41 18" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/b2958ada-73c4-4929-b9cb-4ff352986403">
+
