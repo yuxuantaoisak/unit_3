@@ -1,5 +1,8 @@
 # 1, Create the UML diagram
 
+<img width="1068" alt="Screenshot 2024-02-19 at 22 34 36" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/b1251b8e-178d-47ee-a21f-c10c0c607a2a">
+
+
 # 2, Create the SQL series to find the responsible for the fraudulent transaction
 
 ## Solution
