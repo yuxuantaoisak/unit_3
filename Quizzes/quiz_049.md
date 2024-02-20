@@ -27,4 +27,16 @@ db.run_query(user_info)
 
 
 
-## Proof of work
+## Create a query to get all the transactions involving user id 920
+
+### Solution
+
+```.sql
+
+SELECT * FROM ledger join user on ledger.receiver_id = user.id WHERE user.name = 'Adam';
+
+```
+
+### Proof of work
+
+<img width="1470" alt="Screenshot 2024-02-20 at 20 45 01" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/0ebdf46c-ce12-47da-8587-9439a15ad877">
