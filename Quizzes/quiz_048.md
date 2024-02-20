@@ -20,13 +20,13 @@ for row in result:
     text = f"id {id},sender_id {sender_id},receiver_id {receiver_id},amount {amount}"
     if check_hash(signature, text):
         total += amount
-print(f"Total valid transactions: {total}")
+print(f"Total valid transaction amount: {total}")
 
 ```
 
 ## Proof of work
 
-<img width="1470" alt="Screenshot 2024-02-20 at 17 56 19" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/02934664-0b6a-4eb5-883f-154925a1ec46">
+<img width="1470" alt="Screenshot 2024-02-20 at 23 43 55" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/0326772a-0aa2-43b9-931d-2d7524020906">
 
 ## ER diagram
 
