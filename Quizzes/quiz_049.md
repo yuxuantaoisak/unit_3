@@ -32,6 +32,7 @@ db.run_query(user_info)
 
 ## Create ER diagram
 
+<img width="1298" alt="Screenshot 2024-02-20 at 22 35 56" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/28bf0e53-d5a2-4351-8ba2-127f7efa6995">
 
 
 ## Create a query to get all the transactions involving user id 920
