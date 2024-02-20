@@ -14,7 +14,7 @@ class Quiz050:
         h = self.duration[0]
         m = self.duration[1]
         s = self.duration[2]
-        return f"{h} hours {m} minutes {s} seconds"
+        return f"{h} hours {m} minutes and {s} seconds"
 
 
 obj_1 = Quiz050(flight_num="AA123", origin="London",
@@ -35,8 +35,7 @@ print(text_2)
 ```
 ## Proof of work
 
-<img width="1470" alt="Screenshot 2024-02-20 at 23 37 58" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/8a4975e4-2043-440f-bc87-3723e010d5ee">
-
+<img width="1470" alt="Screenshot 2024-02-20 at 23 39 11" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/aac73e2a-9437-4d2b-9f42-84ec02597863">
 
 ## UML diagram
 
