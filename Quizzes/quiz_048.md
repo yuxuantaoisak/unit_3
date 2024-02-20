@@ -27,3 +27,8 @@ print(f"Total valid transactions: {total}")
 ## Proof of work
 
 <img width="1470" alt="Screenshot 2024-02-20 at 17 56 19" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/02934664-0b6a-4eb5-883f-154925a1ec46">
+
+## ER diagram
+
+<img width="747" alt="Screenshot 2024-02-20 at 22 38 32" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/86bbc8f4-d034-4d3b-9e04-8360f0b0e739">
+
