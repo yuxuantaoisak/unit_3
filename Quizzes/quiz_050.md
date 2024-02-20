@@ -3,7 +3,7 @@
 ```.py
 
 class Quiz050:
-    def __init__(self, flight_num: str, origin: str, destination: str, departure_time: str, duration: list):
+    def __init__(self, flight_num: str, origin: str, destination: str, departure_time: str, duration: list[int]):
         self.flight_num = flight_num
         self.origin = origin
         self.departure_time = departure_time
