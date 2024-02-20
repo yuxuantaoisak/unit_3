@@ -2,28 +2,35 @@
 
 ```.py
 
-# need to update
 
 from my_library import DatabaseBridge
 
 db = DatabaseBridge("bitcoin_exchange.db")
 
 table = """CREATE TABLE IF NOT EXISTS user(
-id INTEGER PRIMARY KEY
-user_id INT
-name TEXT NOT NULL
-email TEXT NOT NULL"""
+id INTEGER PRIMARY KEY,
+name TEXT NOT NULL,
+email TEXT NOT NULL)"""
 
 db.run_query(table)
 
-user_info = """INSERT INTO user (user_id, name, email) VALUES (560, 'John', 'john@xyz.com'),
-(371, 'Smith', 'smith@xyz.com'), (488, 'Alice', 'alice@xyz')"""
+user_info = """INSERT OR IGNORE INTO user (id, name, email) VALUES (560, 'John', 'john@xyz.com'),
+(371, 'Smith', 'smith@xyz.com'), (488, 'Alice', 'alice@xyz'), (561, 'Ani', 'ani@xyz.com'),
+(254, 'Val', 'val@xyz.com'), (920, 'Adam', 'adam@xyz.com'), (438, 'Ana', 'ana@xyz.com'),
+(744, 'Niko', 'niko@xyz.com'), (261, 'Sayaka', 'sayaka@xyz')"""
 
 db.run_query(user_info)
 
-
-
 ```
+
+
+## Proof of work
+
+
+<img width="1470" alt="Screenshot 2024-02-20 at 20 49 05" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/a500f06e-ba3c-4057-a28b-db0e67c674f8">
+
+
+## Create ER diagram
 
 
 
