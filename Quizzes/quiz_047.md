@@ -36,3 +36,6 @@ for row in results:
 
 <img width="1470" alt="Screenshot 2024-02-20 at 17 51 35" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/a99b9110-d353-4a29-bcce-535265425dbd">
 
+## ER diagram
+
+<img width="737" alt="Screenshot 2024-02-20 at 22 40 00" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/845fdc62-c6ee-4d81-8038-92d31f873400">
