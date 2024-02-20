@@ -44,7 +44,7 @@ print("Average word length is", out)
 <img width="1470" alt="Screenshot 2024-02-17 at 20 31 48" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/624d5dfd-22aa-4bb1-85a3-9ff702831753">
 
 
-## UML diagram
+## ER diagram
 
-<img width="847" alt="Screenshot 2024-02-19 at 22 41 18" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/b2958ada-73c4-4929-b9cb-4ff352986403">
+<img width="402" alt="Screenshot 2024-02-20 at 22 42 33" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/b294f6b9-8142-47a8-8693-02771aa1e35b">
 
