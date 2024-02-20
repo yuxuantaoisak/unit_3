@@ -15,7 +15,7 @@ class Quiz050:
         m = self.duration[1]
         s = self.duration[2]
         dest = self.destination
-        return f"{h} hours {m} minutes {s} remaining for {dest}"
+        return f"{h} hours {m} minutes {s} seconds remaining for {dest}"
 
 
 obj_1 = Quiz050(flight_num="AA123", origin="London",
@@ -29,7 +29,7 @@ print(obj_2.get_duration())
 ```
 ## Proof of work
 
-<img width="1470" alt="Screenshot 2024-02-20 at 18 12 07" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/ad0e50cb-c3a1-44c9-88ba-a6e317bb33e0">
+<img width="1470" alt="Screenshot 2024-02-20 at 22 08 43" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/48a3db48-8c01-4bc9-b2d0-1b9e8d71372e">
 
 ## UML diagram
 
