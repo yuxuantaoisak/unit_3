@@ -100,3 +100,6 @@ WHERE INHABITANT.job = 'Herbalist';
 <img width="1470" alt="Screenshot 2024-02-13 at 16 18 45" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/ad261c5a-055e-435b-962b-eac9e01cc14d">
 
 
+# ER diagram
+
+<img width="1303" alt="Screenshot 2024-02-20 at 23 05 13" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/0bd97d60-9576-42f1-95fa-a5dd0d8560b4">
