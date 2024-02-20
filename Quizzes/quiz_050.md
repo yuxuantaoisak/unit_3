@@ -31,3 +31,6 @@ print(obj_2.get_duration())
 
 <img width="1470" alt="Screenshot 2024-02-20 at 18 12 07" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/ad0e50cb-c3a1-44c9-88ba-a6e317bb33e0">
 
+## UML diagram
+
+<img width="484" alt="Screenshot 2024-02-20 at 20 07 28" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/e02bcbe2-65a7-420c-b0ea-bc04b3057574">
