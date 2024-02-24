@@ -1,0 +1,18 @@
+#demoDropDown.kv
+
+MDScreen:
+    size: 500, 700
+
+    MDDropDownItem:
+        id: add_user
+        pos_hint: {'center_x':.5, 'top':.7}
+        size_hint: None, None
+        size: 300, 50
+        text: "Select customer"
+        on_release: app.get_customers(self)
+
+    MDLabel:
+        id: results
+        text: "Customer not selected"
+        pos_hint: {'center_x':.5, 'top':.3}
+        halign: 'center'
