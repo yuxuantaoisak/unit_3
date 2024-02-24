@@ -32,3 +32,8 @@ Considering the client's requirements...
 
 
 ## Criteria C: Development
+
+
+## Criteria D: Functionality
+
+### Video showcasing the functionality of the application
