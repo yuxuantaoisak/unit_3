@@ -1,5 +1,10 @@
 # Unit 3: Tracker
 
+![image](https://github.com/yuxuantaoisak/unit_3/assets/144768397/462102b4-c63c-49c3-96c4-1a441f8cebff)
+
+*blogto.com* [1]
+
+
 # Criteria A: Planning
 
 
@@ -46,3 +51,8 @@ Considering the client's requirements...
 # Criteria D: Functionality
 
 ## Video showcasing the functionality of the application
+
+# Citation
+
+1. O&#39;Neil, Lauren. “The Top 10 Ski and Snowboard Stores in Toronto.” blogTO, blogTO, 25 Nov. 2017, www.blogto.com/sports_play/2015/01/the_top_10_ski_and_snowboard_stores_in_toronto/.
+2. 
