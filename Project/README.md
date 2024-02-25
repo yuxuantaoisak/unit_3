@@ -54,8 +54,15 @@ Lastly, I chose SQLite as the database for the application. SQLite is a relation
 
 ## Flow diagrams
 
+## Test plan
+
+## Record of tasks
+
 # Criteria C: Development
 
+## Existing tools
+
+## List of techniques used
 
 # Criteria D: Functionality
 
