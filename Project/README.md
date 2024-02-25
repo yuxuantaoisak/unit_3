@@ -1,7 +1,6 @@
-# Unit 3: Tracker
+# Unit 3: Online Order Tracker System for a Snowboard Company
 
 ![image](https://github.com/yuxuantaoisak/unit_3/assets/144768397/462102b4-c63c-49c3-96c4-1a441f8cebff)
-
 *blogto.com* [1]
 
 
