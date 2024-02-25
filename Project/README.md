@@ -30,6 +30,15 @@ Considering the client's requirements...
 
 # Criteria B: Solution Overview
 
+## System diagram
+
+## Wireframe diagram
+
+## ER diagram
+
+## UML diagram
+
+## Flow diagrams
 
 # Criteria C: Development
 
