@@ -58,29 +58,7 @@ Lastly, I chose SQLite as the database for the application. SQLite is a relation
 
 ## Record of tasks
 
-| Task No | Planned action | Planned outcome | Time estimate | Completion date | Criterion |
-|---------|----------------|-----------------|---------------|-----------------|-----------|
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
-|         |                |                 |               |                 |           |
+
 
 # Criteria C: Development
 
