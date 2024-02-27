@@ -27,8 +27,6 @@ Lastly, I chose SQLite as the database for the application. SQLite is a relation
 
 
 
-## Justification of Tools
-
 
 ## Success Criteria
 
