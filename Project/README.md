@@ -34,8 +34,8 @@ Lastly, I chose SQLite as the database for the application. SQLite is a relation
 
 1. The GUI application provides a window to create snowboards where the user can enter... [issue tackled: ""]
 2. The application provides a money tracker in which the user 
-3. The database connected to the tracker provides an inventory in which the client can check details of the raw materials [issue tackled: ""]
-4. The GUI application provides different user accesses to the revenue and customer data for the company owner and other employees [issue tackled: ""]
+3. The database connected to the tracker provides an inventory in which the client can check details of the raw materials. [issue tackled: ""]
+4. The GUI application provides different user accesses to the revenue and customer data for the company owner and other employees. [issue tackled: ""]
 5. The GUI application provides customization function for customers to change the design of the snowboard according to their likings [issue tackled: ""]
 
 
