@@ -32,12 +32,13 @@ Lastly, I chose SQLite as the database for the application. SQLite is a relation
 
 
 
-1. The GUI application has a login and registration system secured by the hash function. [issue tackled: "I want the customers' privacy and order details to be secured"]
-2. The GUI application provides a window to create snowboards where the user can enter attributes including color, material, price, and number. [issue tackled: ""]
-3. The GUI application provides a window to create orders where the user can enter attributes including customer's name, items purchased, address, and total amount. [issue tackled: ""]
-4. The application provides a money tracker in which the user can check the profit represented by a diagram. [issue tackled: ""]
-5. The GUI application provides different user accesses to private information like revenue and customer data for the company owner and other employees. [issue tackled: ""]
-6. The GUI application provides customization function for the user to change the design of the snowboard according to their likings. [issue tackled: ""]
+1. The GUI application has a login and registration system secured by the hash function. [issue tackled: "I want my privacy and the customers' order details to be secured"]
+2. The GUI application has different accesses for admin and other users. [issue tackled: ""]
+3. The GUI application provides a window to create snowboards where the user can enter attributes including color, material, price, and number. [issue tackled: ""]
+4. The GUI application provides a window to create orders where the user can enter attributes including customer's name, items purchased, address, and total amount. [issue tackled: ""]
+5. The application provides a money tracker in which the user can check the profit represented by a diagram. [issue tackled: ""]
+6. The GUI application provides a window to check revenue represented by a diagram that is exclusively for the admin. [issue tackled: ""]
+7. The GUI application provides customization function for the user to change the design of the snowboard according to their likings. [issue tackled: ""]
 
 
 
