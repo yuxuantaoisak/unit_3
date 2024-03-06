@@ -205,6 +205,19 @@ This ensure that users do not share username or password, which will lead to con
 
 After confirming that all requirements are met, the method will insert the information the user entered, including username, email, and password into the database "project_3.db" using the DatabaseBridge class. Then, a pop up window will show that the user has successfully signed up. The window will automatically jumps to login page after that.
 
+## Admin Signup
+
+As part of my client's requirement, the admin user should be provided with extra functions. Thus, I designed a signup window that is exclusively for the admin user. The admin signup page asks for an extra admin password, which validates the user's identity. This password that allows the user to sign up as an admin is set by the owner of the snowboard company. If the user enters the correct admin password, the system can confirm that they are authorized by the owner to sign up as an admin with the access to extra functions. 
+
+```.py
+
+if admin_pass != "123456":
+    print("Access denied")
+    self.ids.admin_password.error = True
+    self.ids.admin_password.helper_text = "Access denied"
+    return
+```
+Above is the code confirming that the admin password is correct. If not, the helper text will tell the user that they are denied access. 
 
 
 # Criteria D: Functionality
