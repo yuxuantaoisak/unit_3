@@ -73,12 +73,12 @@ Lastly, I chose SQLite as the database for the application. SQLite is a relation
 | SQLite                         | For loop                             | datetime       |
 | Python                         | If statement                         | my_library.py  |
 | KivyMD                         | Elif statement                       |                |
-| ORM structure                  | Try statement                        |                |
+|                                | Try statement                        |                |
 
 
 ## Main file: "project_3.py"
 
-### Importing methods that I need in building the application
+## Importing methods that I need in building the application
 
 ```.py
 
@@ -203,7 +203,17 @@ After confirming that the password is acceptable under the password policy, the 
 
 This ensure that users do not share username or password, which will lead to confusion between the users and their accesses to different functions. Unique usernames and emails help my client manage the company's employees better, preventing the possibility of mixing up users or the same user signing up twice. 
 
-After confirming that all requirements are met, the method will insert the information the user entered, including username, email, and password into the database "project_3.db" using the DatabaseBridge class. Then, a pop up window will show that the user has successfully signed up. The window will automatically jumps to login page after that.
+```.py
+
+        try:
+            new_user = f"""INSERT INTO users (username, email, password, admin) 
+            values ('{username}', '{email}', '{get_hash(upass)}', '{0}')"""
+            db.insert(query=new_user)
+
+```
+
+After confirming that all requirements are met, the try block was used to insert the information, including username, email, password, and admin status into the database "project_3.db" using the DatabaseBridge class. he password is encrypted by the get_hash method I imported. The admin status is automatically set as 0, or false (the SQLite database does not accept Boolean value, so I had to use 0 and 1 to represent true and false), since this is the signup page for normal users. Then, a pop up window will show that the user has successfully signed up. The window will automatically jumps to login page after that.
+
 
 ## Admin Signup
 
@@ -219,6 +229,73 @@ if admin_pass != "123456":
 ```
 Above is the code confirming that the admin password is correct. If not, the helper text will tell the user that they are denied access. 
 
+After the system confirms that the admin password is correct, it checks if other requirements are met just like how it does in signup page. 
+
+```.py
+
+        try:
+            new_user = f"""INSERT INTO users (username, email, password, admin) 
+            values ('{username}', '{email}', '{get_hash(password)}', '{1}')"""
+            db.insert(query=new_user)
+
+```
+
+This time, the admin status is automatically set as 1, or true, meaning that the user signed up as an admin. 
+
+
+## Login Page
+
+After the user signs up, they will see login page where they are required to enter username and password. I designed a try_login method for the login function. 
+
+```.py
+
+def try_login(self):
+    uname = self.ids.uname.text
+    upass = self.ids.password.text
+    query = f"""SELECT * FROM users WHERE username = '{uname}'"""
+    query_2 = f"""SELECT admin FROM users WHERE username = '{uname}'"""
+    db = DatabaseBridge("project_3.db")
+    result = db.search(query=query, multiple=True)
+    admin = db.search(query=query_2, multiple=True)
+
+```
+
+In this method, the user input of username and password are retrieved from the GUI as two variables, uname and upass. Then, two SQL queries are constructed using the two variables. The DatabaseBridge class object is defined as db, and then its method search is called. Using the search method, the first query returns all attributes of the user, while the second query returns specifically the admin status of the user. 
+
+```.py
+
+new_id, new_uname, new_email, hashed, new_admin = result[0]
+
+```
+
+All the attributes of the returned result are named accordingly. 
+
+
+```.py
+
+if len(result) == 1 and admin == [(0,)] and check_hash(hashed, upass):
+    self.parent.current = "HomePage"
+
+elif len(result) == 1 and admin == [(1,)] and check_hash(hashed, upass):
+    self.parent.current = "AdminHome"
+    LoginPage.admin = True
+
+else:
+    print("Login Unsuccessful")
+
+```
+
+To complete logging in, there are three conditions that all need to be satisfied: the length of the result variable is exactly one, meaning that there are only one user information that corresponds with the information entered by the user; the admin status is either 0, normal user, or 1, admin user; checked_hash must return true.  
+
+Since the password is not directly stored into the database as it appears, the check_hash method must be used to validate the password. It compares a hash and a original text to see if they match, and return true or false. Here, it must return true for the program to proceed. 
+
+As the code shows, if the admin status is 0 (false), the user will jump to home page for normal users, while the page turns to admin home page if admin status is 1 (true). With this design, the user can go to their respective home pages without entering extra information on their admin status, as the system automatically communicates with the SQL database to confirm the user's admin status. 
+
+![Screenshot 2024-03-07 at 0 26 59](https://github.com/yuxuantaoisak/unit_3/assets/144768397/fefa0b9e-a791-47fd-bcb5-18892632b3ba)
+_Fig. 1_
+
+
+**Fig. 1** is a snapshot of the user entity in the database. As shown in the photo, the passwords are encrypted so that they won't get leaked even if people outside the company see this page, making the users' information more secure. Also, the admin status is recorded as either 0 or 1.  
 
 # Criteria D: Functionality
 
