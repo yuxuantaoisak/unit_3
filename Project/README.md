@@ -26,10 +26,7 @@ Regarding the application interface, I decided to use KivyMD. KivyMD is a Python
 Lastly, I chose SQLite as the database for the application. SQLite is a relational database that allows user to interact with each database. It's free to use so it does not cost any extra for my client. MySQL has the same functionalities as SQLite. However, SQLite is much more lightweight and it's a better fit for developing mobile, small-scale applications[5], which is the kind of application I will develop based on my client's requirements. Moreover, SQLite is a good fit for embedded applications: it requires minimum setup and configuration settings so my client does not need to waste time on setting up his devices. So, SQLite is a better choice for the relational database management system in developing this application over other options such as MySQL or non-SQL databases. 
 
 
-
-
 ## Success Criteria
-
 
 
 1. The GUI application has a secure login and registration system. [issue tackled: "I want my privacy and the customers' order details to be secured"]
@@ -179,23 +176,22 @@ Here, the method first checks if the password the user set and the confirm passw
 
 ```.py
 
-        email = self.ids.email.text #get the email form GUI
-        username = self.ids.uname.text
-        db = DatabaseBridge("project_3.db")
-        query = f"""SELECT count(*) from users where email = '{email}'"""
-        query_2 = f"""SELECT count(*) from users where username = '{username}'"""
-        count = db.search(query, multiple=False)
-        count_2 = db.search(query_2, multiple=False)
+email = self.ids.email.text #get the email form GUI
+username = self.ids.uname.text
+db = DatabaseBridge("project_3.db")
+query = f"""SELECT count(*) from users where email = '{email}'"""
+query_2 = f"""SELECT count(*) from users where username = '{username}'"""
+count = db.search(query, multiple=False)
+count_2 = db.search(query_2, multiple=False)
+if count != (0,):
+    self.ids.email.error = True
+    self.ids.email.helper_text = "User with that email already signed up"
+    return
 
-        if count != (0,):
-            self.ids.email.error = True
-            self.ids.email.helper_text = "User with that email already signed up"
-            return
-
-        elif count_2 != (0,):
-            self.ids.uname.error = True
-            self.ids.uname.helper_text = "This username has been used"
-            return
+elif count_2 != (0,):
+    self.ids.uname.error = True
+    self.ids.uname.helper_text = "This username has been used"
+    return
 
 ```
 
@@ -233,10 +229,10 @@ After the system confirms that the admin password is correct, it checks if other
 
 ```.py
 
-        try:
-            new_user = f"""INSERT INTO users (username, email, password, admin) 
-            values ('{username}', '{email}', '{get_hash(password)}', '{1}')"""
-            db.insert(query=new_user)
+try:
+    new_user = f"""INSERT INTO users (username, email, password, admin) 
+    values ('{username}', '{email}', '{get_hash(password)}', '{1}')"""
+    db.insert(query=new_user)
 
 ```
 
@@ -291,11 +287,48 @@ Since the password is not directly stored into the database as it appears, the c
 
 As the code shows, if the admin status is 0 (false), the user will jump to home page for normal users, while the page turns to admin home page if admin status is 1 (true). With this design, the user can go to their respective home pages without entering extra information on their admin status, as the system automatically communicates with the SQL database to confirm the user's admin status. 
 
+Also, the LoginPage.admin class variable is defined as True if the user logs in as an admin. This variable can be passed and used in other classes in order to confirm whether the current user is an admin or not, and further display corresponding pages and functions according to their status.  
+
+
 ![Screenshot 2024-03-07 at 0 26 59](https://github.com/yuxuantaoisak/unit_3/assets/144768397/fefa0b9e-a791-47fd-bcb5-18892632b3ba)
+
+
+
 _Fig. 1_
 
 
-**Fig. 1** is a snapshot of the user entity in the database. As shown in the photo, the passwords are encrypted so that they won't get leaked even if people outside the company see this page, making the users' information more secure. Also, the admin status is recorded as either 0 or 1.  
+**Fig. 1** is a snapshot of the user entity in the database. As shown in the photo, the passwords are encrypted so that they won't get leaked even if people outside the company see this page, making the users' information more secure. Also, the admin status is recorded as either 0 or 1.
+
+### show_password
+
+In both login and signup pages, I defined a method called show_password. 
+
+```.py
+
+def show_password(self):
+    pswd_field = self.ids.password
+    pswd_admin_field = self.ids.admin_password
+    if pswd_field.password:
+        pswd_field.password = False
+        pswd_admin_field.password = False
+        pswd_field.helper_text_mode = 'persistent'
+        pswd_admin_field.helper_text_mode = 'persistent'
+    else:
+        pswd_field.password = True
+        pswd_admin_field.password = True
+        pswd_field.helper_text_mode = 'on_focus'
+        pswd_admin_field.helper_text_mode = 'on_focus'
+
+```
+
+
+The method takes self as the input. It also retrives the passwords from the GUI and stores them into the variables. If the password is currently visible, the function sets the "password" attribute to False to hide the password and sets the "helper_text_mode" attribute to "persistent" to display a helper message. If the password is currently hidden, the function sets the "password" attribute to True to show the password and sets the "helper_text_mode" attribute to "on_focus" to display the helper message when the field is on focus. 
+
+This function hides the password that the user enters when they login or signup, while the user can still choose to show the password when needed by clicking the checkbox in the GUI, which runs the show_password method when pressed. This ensures that the password is secured so that the important information in this application doesn't leak. 
+
+## Add Order Page
+
+In this page, the user can add an online order to be mailed. 
 
 # Criteria D: Functionality
 
