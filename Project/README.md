@@ -32,7 +32,7 @@ Lastly, I chose SQLite as the database for the application. SQLite is a relation
 
 
 
-1. The GUI application has a login and registration system secured by the hash function. [issue tackled: "I want my privacy and the customers' order details to be secured"]
+1. The GUI application has a secure login and registration system. [issue tackled: "I want my privacy and the customers' order details to be secured"]
 2. The GUI application has different accesses for admin and other users. [issue tackled: ""]
 3. The GUI application provides a window to create snowboards where the user can enter attributes including color, material, price, and number. [issue tackled: ""]
 4. The GUI application provides a window to create orders where the user can enter attributes including customer's name, items purchased, address, and total amount. [issue tackled: ""]
@@ -62,9 +62,150 @@ Lastly, I chose SQLite as the database for the application. SQLite is a relation
 
 # Criteria C: Development
 
-## Existing tools
 
 ## List of techniques used
+
+
+| **Software development tools** | **Coding structure tools**           | **Libraries**  |
+|--------------------------------|--------------------------------------|----------------|
+| Pycharm                        | OOP structure (classes, inheritance) | KivyMD library |
+| Relational database            | Objects and attributes               | matplotlib     |
+| SQLite                         | For loop                             | datetime       |
+| Python                         | If statement                         | my_library.py  |
+| KivyMD                         | Elif statement                       |                |
+| ORM structure                  | Try statement                        |                |
+
+
+## Main file: "project_3.py"
+
+### Importing methods that I need in building the application
+
+```.py
+
+from my_library import DatabaseBridge, get_hash, check_hash
+
+```
+I imported two methods and a class: get_hash, check_hash, and DatabaseBridge from a file called "my_library". The DatabaseBridge class helps me connect to the relational database that stores all the data in this project. It allows me to interact with the database through python by running the SQL queries. The two main methods inside the DatabaseBridge class are run_query and search. Run query allows me to run a SQL query through python, while the search method can return the result of the query ran. 
+
+```.py
+class DatabaseBridge:
+    def __init__(self, name):
+        self.db_name = name
+        self.connect = sqlite3.connect(self.db_name)
+        self.cursor = self.connect.cursor()
+
+    def close(self):
+        # code omitted
+
+    def create(self):
+        # code omitted
+
+    def run_query(self, query: str):
+        self.cursor.execute(query)
+        self.connect.commit()
+
+    def insert(self, query: str):
+        # code omitted 
+
+    def search(self, query, multiple: False):
+        results = self.cursor.execute(query)
+        if multiple is True:
+            return results.fetchall()
+        return results.fetchone()
+
+```
+
+The search method above takes a SQL query and "multiple" as the inputs. The method executes the query using a cursor object and fetches result. The default value of the "multiple" parameter is False, meaning that only a single result will be fetched. If it's True, all results will be fetched and returned as output. 
+
+
+
+```.py
+
+def get_hash(text: str):
+    return hash_function.hash(text)
+
+
+def check_hash(input_hash, text):
+    return hash_function.verify(text, input_hash)
+
+```
+
+Two other methods I imported are get_hash and check_hash. The get_hash method takes a string as the input, and returns another string encrypted by the sha-256 encryption from the passlib library. This method allows me to encrypt user data so that they are safe from hackers and possible information leaks.
+
+The check_hash function takes an encrypted hash and a text as inputs. Using the same sha-256 encryption, it checks if the two inputs correspond. This method helps me with the login system and validation system. 
+
+## Signup Page
+
+As stated in success criteria, my client required a login and registration system that are secured. I designed a class called SignupPage with all the useful methods. 
+
+### try_signup
+
+When a new user tries to sign up, the try_signup function will check all possible mistakes and matches with the user input, as well as enforcing the company's password policy.
+
+```.py
+
+if upass != cpass:
+  print("Passwords do not match")
+  self.ids.password.error = True
+  self.ids.password_confirm.error = True
+  self.ids.password_confirm.helper_text = "Passwords do not match"
+  return
+#the passwords match
+#check the password policy, length
+if len(upass) < 6:
+  print("Password must be at least 6 characters")
+  self.ids.password.error = True
+  self.ids.password_confirm.error = True
+  self.ids.password_confirm.helper_text = "Password must be at least 6 characters"
+  return
+
+elif not any(char.isdigit() for char in upass):
+  print("Password must contain one number")
+  self.ids.password.error = True
+  self.ids.password_confirm.error = True
+  self.ids.password_confirm.helper_text = "Password must contain one number"
+  return
+elif not any(char.isupper() for char in upass):
+  print("Password must contain an uppercase letter")
+  self.ids.password.error = True
+  self.ids.password_confirm.error = True
+  self.ids.password_confirm.helper_text = "Password must contain an uppercase letter"
+  return
+
+```
+
+Here, the method first checks if the password the user set and the confirm password match (the user is asked to enter the password twice to confirm). If they do not match, the helper text will remind the user that the two passwords do not match. Then, it checks if the password set by the user has more than 6 characters as part of the company's password policy to ensure safety. Another requirement of the password policy is that the password has to contain at least one number and one upper case letter. I used python's isdigit() and isupper() methods to achieve this. These two methods and build-in for python. They check whether a string contains a digit/upper case letter or not, and return true or false. 
+
+
+```.py
+
+        email = self.ids.email.text #get the email form GUI
+        username = self.ids.uname.text
+        db = DatabaseBridge("project_3.db")
+        query = f"""SELECT count(*) from users where email = '{email}'"""
+        query_2 = f"""SELECT count(*) from users where username = '{username}'"""
+        count = db.search(query, multiple=False)
+        count_2 = db.search(query_2, multiple=False)
+
+        if count != (0,):
+            self.ids.email.error = True
+            self.ids.email.helper_text = "User with that email already signed up"
+            return
+
+        elif count_2 != (0,):
+            self.ids.uname.error = True
+            self.ids.uname.helper_text = "This username has been used"
+            return
+
+```
+
+After confirming that the password is acceptable under the password policy, the search method from DatabaseBridge class connects to the relational database and runs the queries that are responsible for finding whether the username and password exist among the current user. The count and count_2 variable stores the result returned. If either of them is not 0, meaning that other existing user(s) has the same username or email, the helper text will remind the user that the username or email has been used already. 
+
+This ensure that users do not share username or password, which will lead to confusion between the users and their accesses to different functions. Unique usernames and emails help my client manage the company's employees better, preventing the possibility of mixing up users or the same user signing up twice. 
+
+After confirming that all requirements are met, the method will insert the information the user entered, including username, email, and password into the database "project_3.db" using the DatabaseBridge class. Then, a pop up window will show that the user has successfully signed up. The window will automatically jumps to login page after that.
+
+
 
 # Criteria D: Functionality
 
