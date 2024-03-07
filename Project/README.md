@@ -217,7 +217,7 @@ After confirming that all requirements are met, the try block was used to insert
 
 ## Admin Signup
 
-As part of my client's requirement, the admin user should be provided with extra functions. Thus, I designed a signup window that is exclusively for the admin user. The admin signup page asks for an extra admin password, which validates the user's identity. This password that allows the user to sign up as an admin is set by the owner of the snowboard company. If the user enters the correct admin password, the system can confirm that they are authorized by the owner to sign up as an admin with the access to extra functions. 
+As part of my client's requirement, the admin user should be provided with extra functions. Thus, I designed a signup window that is exclusively for the admin user. The admin signup page asks for an extra admin password, which is set by the company owner and validates the current user's identity. This password that allows the user to sign up as an admin is set by the owner of the snowboard company. If the user enters the correct admin password, the system can confirm that they are authorized by the owner to sign up as an admin with the access to extra functions. 
 
 ```.py
 
@@ -287,11 +287,20 @@ else:
 
 To complete logging in, there are three conditions that all need to be satisfied: the length of the result variable is exactly one, meaning that there are only one user information that corresponds with the information entered by the user; the admin status is either 0, normal user, or 1, admin user; checked_hash must return true.  
 
+
+### Validating password
+
 Since the password is not directly stored into the database as it appears, the check_hash method must be used to validate the password. It compares a hash and a original text to see if they match, and return true or false. Here, it must return true for the program to proceed. 
+
+
+### Confirming admin status
+
+The code confirms the admin status of the user, which is either 0 or 1. 
 
 As the code shows, if the admin status is 0 (false), the user will jump to home page for normal users, while the page turns to admin home page if admin status is 1 (true). With this design, the user can go to their respective home pages without entering extra information on their admin status, as the system automatically communicates with the SQL database to confirm the user's admin status. 
 
 Also, the LoginPage.admin class variable is defined as True if the user logs in as an admin. This variable can be passed and used in other classes in order to confirm whether the current user is an admin or not, and further display corresponding pages and functions according to their status.  
+
 
 
 ![Screenshot 2024-03-07 at 0 26 59](https://github.com/yuxuantaoisak/unit_3/assets/144768397/fefa0b9e-a791-47fd-bcb5-18892632b3ba)
@@ -364,6 +373,67 @@ _Fig. 2_
 **Fig. 2** shows the dropdown menu from the UI. 
 
 
+
+### Choose date
+
+In the add order page, I designed a button where the user can select the date when the order is received using the MDDatePicker dialog box from KivyMD library. 
+
+```.py
+
+def choose_date(self):
+    date_dialog = MDDatePicker()
+    date_dialog.bind(on_save=self.on_save)
+    date_dialog.open()
+
+def on_save(self, instance, value, date_range):
+    self.selected_date = value
+    value = value.strftime("%m/%d/%Y")
+    self.ids.time_purchased.text = f"{value}"
+
+```
+
+The choose_date method is called when the user clicks the button. The method creates an instance of MDDatePicker which is a graphical calender that allows the user to pick a date from. The bind method is used to connect the event selected, which is the date in this case. Then, the on_save method first stores the selected date into the value variable, which then is formatted as "mm/dd/yyyy". The date on display in the GUI then becomes the date that the user selected. 
+
+
+The choose date method helps user picking a date when the order is received, effectively documenting order details. The use of MDDatePicker enhances user experience by a better design, and an easy way to select date. 
+
+
+
+## Check order page
+
+
+On this page, I designed a table where the user can check all the orders. When they finish mailing an order, they can choose to delete it from the list. 
+
+<img width="380" alt="Screenshot 2024-03-08 at 0 13 16" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/5de2ceab-e747-49e4-83aa-ec9b9f10efd1">
+
+The picture demonstrates what the table looks like in the GUI. 
+
+### Deleting order
+
+```.py
+
+def delete(self):
+    checked_rows = self.data_table.get_row_checks()
+    print(checked_rows)
+    if not checked_rows:
+        dialog = MDDialog(title="Empty selection", text="Please select a row!")
+        dialog.open()
+    else:
+        conn = DatabaseBridge("project_3.db")
+        for i in checked_rows:
+            select_order_id = i[0]
+            print(select_order_id)
+            query = f"""DELETE FROM orders WHERE id = {select_order_id}"""
+            conn.run_query(query=query)
+        dialog = MDDialog(title="Order deleted", text="You successfully deleted the order!")
+        dialog.open()
+        self.update()
+
+```
+
+When the user tries to delete order(s), the delete method in CheckOrder class is called. First, it confirms the rows that the user checked by ticking the boxes. If the user didn't select any rows, a pop up window will remind that a row has to be selected to delete. Otherwise, the DatabaseBridge class is used to interact with the relational database, after which a SQL query to delete the row is ran. Then, a pop up window will show up to let the user know that the order is deleted. 
+
+The table is immediately refreshed using the update method from the same class. 
 
 # Criteria D: Functionality
 
