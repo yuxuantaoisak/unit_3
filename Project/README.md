@@ -43,6 +43,10 @@ Lastly, I chose SQLite as the database for the application. SQLite is a relation
 
 ## System diagram
 
+![Screenshot 2024-03-07 at 23 40 14](https://github.com/yuxuantaoisak/unit_3/assets/144768397/7f39006b-09a3-4ee9-a61f-a26daf536ce6)
+
+The above diagram illustrates the system, its parts, inputs, and output. The relationships between them are shown as well. The application takes user input from the keyboard and mouse, the computer details and the software it's running are included in the diagram. The python environment is PyCharm, in which two coding languages, python and KivyMD are ran. They interact with the relational database "project_3.db" inside the PyCharm environment. The output is displayed on a screen. 
+
 ## Wireframe diagram
 
 ## ER diagram
