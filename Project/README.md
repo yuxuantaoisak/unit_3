@@ -328,7 +328,38 @@ This function hides the password that the user enters when they login or signup,
 
 ## Add Order Page
 
-In this page, the user can add an online order to be mailed. 
+In this page, the user can add an online that is to be mailed. The attributes include customer name, item purchased, amount, address, time, and hash signature. 
+
+### Select item purchased
+
+This is a dropdown menu constructed by the widget MDDropDownItem from the kivymd library. When the user clicks the dropdown menu, a list of products appears, and the user can select which product is included in the order. 
+
+```.py
+
+def get_items(self, button):
+    self.conn = DatabaseBridge("project_3.db")
+    query_item = "SELECT DISTINCT items.item_name FROM items"
+    self.items = self.conn.search(query=query_item, multiple=True)
+    self.menu_items = []
+    for i in self.items:
+        name = i[0]
+        self.menu_items.append(name)
+    print(self.menu_items)
+
+```
+
+In the get_items class, used the search attribute from the DatabaseBridge class to interact with the database. The method returns the result (all item names) of the SQL query, which is then appended to self.menu_items list. When the user clicks the dropdown button, a menu with all products appears, and the user can choose which product they want to include in the order. 
+
+<img width="365" alt="Screenshot 2024-03-07 at 18 05 01" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/01d22c5e-91c8-4bf1-91ba-273fc6b83489">
+
+
+_Fig. 2_
+
+
+
+**Fig. 2** shows the dropdown menu from the UI. 
+
+
 
 # Criteria D: Functionality
 
