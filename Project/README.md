@@ -312,6 +312,26 @@ _Fig. 1_
 
 **Fig. 1** is a snapshot of the user entity in the database. As shown in the photo, the passwords are encrypted so that they won't get leaked even if people outside the company see this page, making the users' information more secure. Also, the admin status is recorded as either 0 or 1.
 
+
+### change_page method
+
+This method uses the class variable from the LoginPage class. The admin status is confirmed when the user logs in and stored into the LoginPage.admin variable. 
+
+
+```.py
+
+def change_page(self):
+    if LoginPage.admin is True:
+        self.parent.current = "AdminHome"
+    else:
+        self.parent.current = "HomePage"
+
+```
+
+On the order page, the user is directed to either add order page or check order page. When the user wants to go back to the home page, this method will decide which home page (admin or normal) to take the user to according the variable LoginPage.admin that is defined when the user logs in. 
+
+
+
 ### show_password
 
 In both login and signup pages, I defined a method called show_password. 
