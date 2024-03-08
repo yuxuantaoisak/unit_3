@@ -205,10 +205,10 @@ This ensure that users do not share username or password, which will lead to con
 
 ```.py
 
-        try:
-            new_user = f"""INSERT INTO users (username, email, password, admin) 
-            values ('{username}', '{email}', '{get_hash(upass)}', '{0}')"""
-            db.insert(query=new_user)
+try:
+    new_user = f"""INSERT INTO users (username, email, password, admin) 
+    values ('{username}', '{email}', '{get_hash(upass)}', '{0}')"""
+    db.insert(query=new_user)
 
 ```
 
@@ -434,6 +434,76 @@ def delete(self):
 When the user tries to delete order(s), the delete method in CheckOrder class is called. First, it confirms the rows that the user checked by ticking the boxes. If the user didn't select any rows, a pop up window will remind that a row has to be selected to delete. Otherwise, the DatabaseBridge class is used to interact with the relational database, after which a SQL query to delete the row is ran. Then, a pop up window will show up to let the user know that the order is deleted. 
 
 The table is immediately refreshed using the update method from the same class. 
+
+
+
+## Kivy file: "project_3.kv"
+
+### Screen manager
+
+```.kv
+
+ScreenManager:
+
+    id: screens
+
+    LoginPage:
+        name: "LoginPage"
+
+    SignupPage:
+        name: "SignupPage"
+
+    AdminSignup:
+        name: "AdminSignup"
+
+    HomePage:
+        name: "HomePage"
+
+    OrderPage:
+        name: "OrderPage"
+
+...
+
+```
+
+The screen manager funtion of KivyMD makes it easy to swtich between screens that inhert from MDScreen class. Eacy screen is named accordingly and assigned a unique id (name) so that they each have different functionalities and layout. This allows me to build the application across different screens with different functions, which makes it more user friendly. 
+
+
+
+### MDDialog
+
+To make the application interactive and let the user aware of what's happening, I used a MDDialog which is a KivyMD box component. 
+
+For example, this is a pop up window constructed with MDDialog. It appears after the user successfully logs in. 
+
+```.kv
+
+dialog = MDDialog(title="Logged in", text=f"{uname}, you successfully logged in!")
+dialog.open()
+
+```
+
+MDDialog can take different inputs as well. On the home page, I designed a pop up window with two MDFlatButtons, which shows up when the user clicks logout. The texts on the button are yes and no, each calling another method to either confirm or cancel logout. This ensures that the user doesn't accidentally logout. 
+
+
+### MDIconButton
+
+MDIconButton is a Kivymd component that allows me to build a button that is represented by an icon. With this, I can now design a minimalistic style button which greatly improves user experience and simplifies the UI page. 
+
+```.kv
+
+MDIconButton:
+    icon: "shopping-outline"
+    text: "Orders"
+    md_bg_color: "#1f7fed"
+    size_hint: .4, .05
+    pos_hint: {"center_x": .5, "center_y": .5}
+    on_release: app.root.current = 'OrderPage'
+
+```
+
+Above is an example of the use of MDIconButton in my application. I used the "shopping-outline" icon which looks like a shopping bag. The user can instinctively understand the meaming behind this icon. 
+
 
 # Criteria D: Functionality
 
