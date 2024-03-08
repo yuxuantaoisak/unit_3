@@ -365,12 +365,14 @@ In the get_items class, used the search attribute from the DatabaseBridge class 
 
 <img width="365" alt="Screenshot 2024-03-07 at 18 05 01" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/01d22c5e-91c8-4bf1-91ba-273fc6b83489">
 
-
 _Fig. 2_
 
 
 
 **Fig. 2** shows the dropdown menu from the UI. 
+
+
+Note that the KivyMD part of this code is omitted. Check the MDDropDownMenu element in the kivy file section. 
 
 
 
@@ -503,6 +505,29 @@ MDIconButton:
 ```
 
 Above is an example of the use of MDIconButton in my application. I used the "shopping-outline" icon which looks like a shopping bag. The user can instinctively understand the meaming behind this icon. 
+
+
+### MDDropDownMenu
+
+
+```.py
+
+buttons_menu = []
+
+for name in self.menu_items:
+    btn_dict = {"text": str(name),
+                "viewclass": "OneLineListItem",
+                "on_release": lambda x=name: self.button_pressed(x)}
+    buttons_menu.append(btn_dict)
+
+self.menu = MDDropdownMenu(caller=button, items=buttons_menu,
+                                   width_mult=4)
+self.menu.open()
+
+```
+
+I used the MDDropDownMenu component to build the dropdown list where the user can select the item in the order. All the names of the item are already stored into the variable "self.menu_items" in the previous part of the code. Here, I used a for loop to append the "text", "viewclass", and "on_release" attributes of the dropdown menu to an empty list called "buttons_menu". The "on_release" attribute calls the button_pressed method in the same class which selects the row that the user clicked and print it. Then, the MDDropDownMenu element is used, which automatically generates a dropdown list given the information. 
+
 
 
 # Criteria D: Functionality
