@@ -68,6 +68,10 @@ This ER diagram shows the tables in the database "project_3.db" and there relati
 
 This UML diagram shows the classes and their methods used in developing this application. The lines and arrows illustrate the inheritance relationship. Most of the classes used in the application either inherit from MDScreen class or MDApp class. 
 
+
+![Blank diagram - Color (2)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/3cfe411e-4db7-42d0-8d8f-37df5f605535)
+
+
 ## Flow diagrams
 
 ## Test plan
