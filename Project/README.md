@@ -76,10 +76,12 @@ This UML diagram shows the classes and their methods used in developing this app
 
 ![Blank diagram - Color (4)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/d8c2288e-f6f7-48ab-9a17-91138a5f6ec8)
 
+
 ![Blank diagram - Color (5)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/97624cde-ed2b-44e0-99b9-1a99c1ecf4f3)
 
 
 ![Blank diagram - Color (3)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/38b62483-0197-48fb-888e-21bfe7245ead)
+
 
 ## Test plan
 
@@ -95,8 +97,6 @@ This UML diagram shows the classes and their methods used in developing this app
 | 8   | Integration testing | Test for profit graph     | 1, run the python file "project_3.py" 2, enter the account information of an admin account 3, click login button4 4, click the cash icon on home page                                                                           | A graph with a curve that represents revenue should show up.                                                                                                                                                                                                                                                                                                                                                                                |
 | 9   | Unit testing        | Test for logout           | 1, run the python file "project_3.py" 2, enter the account information 3, click login button 4, click logout icon on home page                                                                                                  | A pop up window will show up, asking for the confirmation of logging out.                                                                                                                                                                                                                                                                                                                                                                   |
 | 10  | Code review         | Review all codes          | 1, open "project_3.py" 2, open "project_3.kv" 3, check all lines 4, make changes if needed                                                                                                                                      | All codes should be commented thoroughly, with a structure that can be easily understood and followed.                                                                                                                                                                                                                                                                                                                                      |
-|     |                     |                           |                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|     |                     |                           |                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 ## Record of tasks
 
