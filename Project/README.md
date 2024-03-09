@@ -49,6 +49,11 @@ The above diagram illustrates the system, its parts, inputs, and output. The rel
 
 ## Wireframe diagram
 
+![Screenshot 2024-03-10 at 0 43 27](https://github.com/yuxuantaoisak/unit_3/assets/144768397/da86f3b9-3220-4d35-8793-6e16e34b3ca7)
+
+This is the wireframe diagram that shows the switch between screens in my application. The arrows and lines show which screen the application will switch to after pressing the button. 
+
+
 ## ER diagram
 
 ## UML diagram
