@@ -74,6 +74,12 @@ This UML diagram shows the classes and their methods used in developing this app
 
 ## Flow diagrams
 
+![Blank diagram - Color (4)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/d8c2288e-f6f7-48ab-9a17-91138a5f6ec8)
+
+
+
+![Blank diagram - Color (3)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/38b62483-0197-48fb-888e-21bfe7245ead)
+
 ## Test plan
 
 ## Record of tasks
