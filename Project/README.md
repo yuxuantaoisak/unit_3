@@ -56,7 +56,17 @@ This is the wireframe diagram that shows the switch between screens in my applic
 
 ## ER diagram
 
+![Screenshot 2024-03-10 at 1 20 29](https://github.com/yuxuantaoisak/unit_3/assets/144768397/a96a79da-247e-4db4-bb44-f157278487de)
+
+This ER diagram shows the tables in the database "project_3.db" and there relationships. As indicated, the table "orders" has 7 columns: id, customer_name, item_purchased, time_purchased, signature, address, amount. The other two tables have columns with specific data types like "text" and "int". The diagram also shows the relationship between items and orders: one order has one item. 
+
+
 ## UML diagram
+
+
+![Screenshot 2024-03-10 at 2 00 13](https://github.com/yuxuantaoisak/unit_3/assets/144768397/ee68352c-808f-411d-a222-98fc819fbb9e)
+
+This UML diagram shows the classes and their methods used in developing this application. The lines and arrows illustrate the inheritance relationship. Most of the classes used in the application either inherit from MDScreen class or MDApp class. 
 
 ## Flow diagrams
 
@@ -217,7 +227,25 @@ try:
 
 ```
 
-After confirming that all requirements are met, the try block was used to insert the information, including username, email, password, and admin status into the database "project_3.db" using the DatabaseBridge class. he password is encrypted by the get_hash method I imported. The admin status is automatically set as 0, or false (the SQLite database does not accept Boolean value, so I had to use 0 and 1 to represent true and false), since this is the signup page for normal users. Then, a pop up window will show that the user has successfully signed up. The window will automatically jumps to login page after that.
+After confirming that all requirements are met, the try block was used to insert the information, including username, email, password, and admin status into the database "project_3.db" using the DatabaseBridge class. The password is encrypted by the get_hash method I imported. The admin status is automatically set as 0, or false (the SQLite database does not accept Boolean value, so I had to use 0 and 1 to represent true and false), since this is the signup page for normal users. Then, a pop up window will show that the user has successfully signed up. The window will automatically jumps to login page after that.
+
+### get_hash
+
+As shown above, the password entered by the user during registration is stored into the database after being encrypted by a method called get_hash. 
+
+```.py
+
+hash_function = sha256_crypt.using(rounds=30000)
+
+
+def get_hash(text: str):
+    return hash_function.hash(text)
+
+
+```
+
+The get_hash function takes a string as the input, pads the input message, divides it into 512-bit blocks, and processes each block through 64 rounds of a compression function. This function applies bitwise operations and additions using an initial hash value to produce a 256-bit hash output, ensuring data integrity and security through a computationally irreversible process. In this case, the password is encrypted using this method before it is stored into the database so that even the database is hacked, the passwords will still stay safe. 
+
 
 
 ## Admin Signup
