@@ -29,13 +29,12 @@ Lastly, I chose SQLite as the database for the application. SQLite is a relation
 ## Success Criteria
 
 
-1. The GUI application has a secure login and registration system. [issue tackled: "I want my privacy and the customers' order details to be secured"]
-2. The GUI application has different accesses for admin and other users. [issue tackled: ""]
-3. The GUI application provides a window to create snowboards where the user can enter attributes including color, material, price, and number. [issue tackled: ""]
-4. The GUI application provides a window to create orders where the user can enter attributes including customer's name, items purchased, address, and total amount. [issue tackled: ""]
-5. The application provides a money tracker in which the user can check the profit represented by a diagram. [issue tackled: ""]
-6. The GUI application provides a window to check revenue represented by a diagram that is exclusively for the admin. [issue tackled: ""]
-7. The GUI application provides customization function for the user to change the design of the snowboard according to their likings. [issue tackled: ""]
+1. The GUI application has a secure login and registration system. [issue tackled: "I want the company's privacy and the order details to be secured"]
+2. The GUI application has different accesses for the admin and other users. [issue tackled: "I want some functions that are related to the company's privacy to be exlusive to me. "]
+3. The GUI application provides a window to create and delete orders where the user can enter attributes including customer's name, items purchased, address, and total amount. [issue tackled: "I want a system to help me better manage the online orders. "]
+4. The application provides a tracker where the user can check or add the quantity of all products. [issue tackled: "I also need to check and change the quantity of current products. "]
+5. The GUI application provides a window to check revenue represented by a diagram that is exclusive to the admin. [issue tackled: "For example, I want a page to check the profit generated daily that is only accessible for me. "]
+6. The GUI application provides customization function for the user to change the design of the snowboard according to their likings. [issue tackled: "The current model doesn't fit me. "]
 
 
 
@@ -571,6 +570,51 @@ When the user tries to delete order(s), the delete method in CheckOrder class is
 The table is immediately refreshed using the update method from the same class. 
 
 
+### Check items page
+
+As required by the client, I designed a page in which the user can check and add the current quantity of all products. In the CheckItemsPage class, a query that searches for the "quantity" column in the "items" table is ran for each product. The result is saved into a variable and converted into a list by the built-in list() function to make it subscriptable. The original data type is "tuple", which is not subscriptable, preventing me from getting the quantity number. 
+
+This is an example of how I achieve this. 
+
+```.py
+
+def on_pre_enter(self, *args):
+
+    db = DatabaseBridge("project_3.db")
+
+    query_neck_warmer = f"""SELECT quantity FROM items WHERE id = 1"""
+    self.neck_warmer = list(db.search(query=query_neck_warmer, multiple=False))
+    self.ids.neck_warmer.text = f"Quantity: {str(self.neck_warmer[0])}"
+
+    #  code omitted for the purpose of displaying the strcture
+
+```
+
+As shown in the code, after getting the quantity of the product, the text on the GUI displays the result as it appears in the database, allowing the user to get a sense of the number of products currently in stock. Note that the code is repeated for each product. 
+
+
+
+In order to display the correct quantity, the quantity needs to be subtracted one each time the user adds an order with that product. To achieve this, I modified the save method in the AddOrder class. 
+
+```.py
+
+def save(self):
+
+    #  code omitted
+
+    db = DatabaseBridge("project_3.db")
+    query_item = f"""UPDATE items SET quantity = quantity - 1 WHERE item_name = '{items_purchased}'"""
+
+    db.run_query(query=query_item)
+
+```
+
+
+With this change, the quantity adheres to the real quantity so that it changes whenever a user adds an order. 
+
+
+
+
 
 ## Kivy file: "project_3.kv"
 
@@ -660,6 +704,43 @@ self.menu.open()
 ```
 
 I used the MDDropDownMenu component to build the dropdown list where the user can select the item in the order. All the names of the item are already stored into the variable "self.menu_items" in the previous part of the code. Here, I used a for loop to append the "text", "viewclass", and "on_release" attributes of the dropdown menu to an empty list called "buttons_menu". The "on_release" attribute calls the button_pressed method in the same class which selects the row that the user clicked and print it. Then, the MDDropDownMenu element is used, which automatically generates a dropdown list given the information. 
+
+
+### MDColorPicker
+
+In the customize page, I designed a color picker so that the user can pick desired color from a visually beautified and user-friendly color picker. 
+
+```.py
+
+def open_color_picker(self):
+    color_picker = MDColorPicker(size_hint=(0.45, 0.85))
+    color_picker.open()
+    color_picker.bind(
+    on_select_color=self.on_select_color,
+    on_release=self.get_selected_color,
+    )
+
+def get_selected_color(
+    self,
+    instance_color_picker: MDColorPicker,
+    type_color: str,
+    selected_color: Union[list, str],
+):
+
+    print(f"Selected color is {selected_color}")
+    self.update_color(selected_color[:-1] + [1])
+
+def on_select_color(self, instance_gradient_tab, color: list) -> None:
+    pass
+
+
+```
+
+
+This code defines a method "open_color_picker" that initializes a color picker widget (`MDColorPicker`) and binds two events to it: `on_select_color` and `on_release`. When a color is selected within the picker, the `get_selected_color` method is called to print the selected color and update the background color of a toolbar element (`self.ids.toolbar`). The `update_color` method adjusts the alpha channel of the selected color and applies it to the toolbar. 
+
+
+With this design, the user can now pick a color easily from a range of choices displayed on a palette for their personalized snowboard. 
 
 
 
