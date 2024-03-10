@@ -675,6 +675,30 @@ dialog.open()
 MDDialog can take different inputs as well. On the home page, I designed a pop up window with two MDFlatButtons, which shows up when the user clicks logout. The texts on the button are yes and no, each calling another method to either confirm or cancel logout. This ensures that the user doesn't accidentally logout. 
 
 
+
+### MDCheckBox
+
+
+```.kv
+
+MDBoxLayout:
+    size_hint: .8, .07
+    pos_hint: {"center_x": .5}
+
+    MDCheckbox:
+        id: showpassword
+        size_hint: .1, 1
+        pos_hint: {"center_x": .5,"center_y": .5}
+        on_active: root.show_password()
+
+
+```
+
+
+The MDCheckBox widget is assigned with the id "showpassword", and specified its size and position by `size_hint` and `pos_hint` attributes. The `on_active` event of the MDCheckBox calls the `show_password` method from the main python file: whenever the checkbox is toggled (selected or unselected), the `show_password` method is called to show or hide the password. 
+
+
+
 ### MDIconButton
 
 MDIconButton is a Kivymd component that allows me to build a button that is represented by an icon. With this, I can now design a minimalistic style button which greatly improves user experience and simplifies the UI page. 
