@@ -822,6 +822,9 @@ With this design, the user can now pick a color easily from a range of choices d
 
 ## Video showcasing the functionality of the application
 
+https://youtu.be/TEr3MkY2x_o
+
+
 # Citation
 
 1. O&#39;Neil, Lauren. “The Top 10 Ski and Snowboard Stores in Toronto.” blogTO, blogTO, 25 Nov. 2017, www.blogto.com/sports_play/2015/01/the_top_10_ski_and_snowboard_stores_in_toronto/.
