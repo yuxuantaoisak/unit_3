@@ -703,7 +703,7 @@ self.menu.open()
 
 ```
 
-I used the MDDropDownMenu component to build the dropdown list where the user can select the item in the order. All the names of the item are already stored into the variable "self.menu_items" in the previous part of the code. Here, I used a for loop to append the "text", "viewclass", and "on_release" attributes of the dropdown menu to an empty list called "buttons_menu". The "on_release" attribute calls the button_pressed method in the same class which selects the row that the user clicked and print it. Then, the MDDropDownMenu element is used, which automatically generates a dropdown list given the information. 
+I used the MDDropDownMenu component to build the dropdown list where the user can select the item in the order. All the names of the item are already stored into the variable `self.menu_items` in the previous part of the code. Here, I used a for loop to append the "text", "viewclass", and "on_release" attributes of the dropdown menu to an empty list called `buttons_menu`. The `on_release` attribute calls the button_pressed method in the same class which selects the row that the user clicked and print it. Then, the MDDropDownMenu element is used, which automatically generates a dropdown list given the information. 
 
 
 ### MDColorPicker
@@ -737,7 +737,7 @@ def on_select_color(self, instance_gradient_tab, color: list) -> None:
 ```
 
 
-This code defines a method "open_color_picker" that initializes a color picker widget (`MDColorPicker`) and binds two events to it: `on_select_color` and `on_release`. When a color is selected within the picker, the `get_selected_color` method is called to print the selected color and update the background color of a toolbar element (`self.ids.toolbar`). The `update_color` method adjusts the alpha channel of the selected color and applies it to the toolbar. 
+This code defines a method `open_color_picker` that initializes a color picker widget (`MDColorPicker`) and binds two events to it: `on_select_color` and `on_release`. When a color is selected within the picker, the `get_selected_color` method is called to print the selected color and update the background color of a toolbar element (`self.ids.toolbar`). The `update_color` method adjusts the alpha channel of the selected color and applies it to the toolbar. 
 
 
 With this design, the user can now pick a color easily from a range of choices displayed on a palette for their personalized snowboard. 
