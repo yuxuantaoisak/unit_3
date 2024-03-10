@@ -580,7 +580,7 @@ When the user tries to delete order(s), the delete method in CheckOrder class is
 The table is immediately refreshed using the update method from the same class. 
 
 
-### Check items page
+## Check items page
 
 As required by the client, I designed a page in which the user can check and add the current quantity of all products. In the CheckItemsPage class, a query that searches for the "quantity" column in the "items" table is ran for each product. The result is saved into a variable and converted into a list by the built-in list() function to make it subscriptable. The original data type is "tuple", which is not subscriptable, preventing me from getting the quantity number. 
 
@@ -623,7 +623,37 @@ def save(self):
 With this change, the quantity adheres to the real quantity so that it changes whenever a user adds an order. 
 
 
+## Plotting revenue graph
 
+As part of this project's success criteria, there should be a function to check revenue graph that is exclusive to the admin user. I defined a method under the class `AdminHome` so that only admin user has the access to it. 
+
+```.py
+
+def profit_graph(self):
+    db = DatabaseBridge("project_3.db")
+    profit = []
+    date = []
+    query = f"""SELECT items.item_name, orders.items_purchased, items.profit, time_purchased
+                FROM orders
+                INNER JOIN items on item_name = items_purchased
+                """
+    x = db.search(query=query, multiple=True)
+    print(x)
+    for i in x:
+        profit.append(i[2])
+        date.append(i[3])
+
+    plt.plot(date, profit, label="Profit Graph by Date")
+    plt.xlabel("Date")
+    plt.ylabel("Daily profit in ¥")
+    plt.xticks(rotation=45)
+    plt.show()
+
+```
+
+This method first connects to the database, and used a inner join clause from SQL queries. Inner join clause selects records that have matching values in both tables. Here, all the same values from item_name column in `items` table and item_purchased column in `orders` table are selected, along with profit and time. 
+
+With these information, the profit and dates are appended to two empty lists in a for loop. Then, matplotlib library is used to plot the graph. 
 
 
 ## Kivy file: "project_3.kv"
