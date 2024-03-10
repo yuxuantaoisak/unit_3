@@ -688,6 +688,16 @@ ScreenManager:
 The screen manager funtion of KivyMD makes it easy to swtich between screens that inhert from MDScreen class. Eacy screen is named accordingly and assigned a unique id (name) so that they each have different functionalities and layout. This allows me to build the application across different screens with different functions, which makes it more user friendly. 
 
 
+### FitImage
+
+FitImage is a widget provided by KivyMD library for the purpose of displaying an image in the KivyMD application. The primary function of FitImage is to fit the displayed image within the available space while preserving its aspect ratio. This means that the image will be scaled to fit the available area without distortion. FitImage is particularly useful when you want to display images in a way that ensures they are fully visible without stretching or cropping. In my application, I used FitImage for my background image. 
+
+```.kv
+
+FitImage:
+        source: "background.jpg"
+
+```
 
 ### MDDialog
 
