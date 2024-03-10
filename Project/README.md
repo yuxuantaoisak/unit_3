@@ -74,14 +74,30 @@ This UML diagram shows the classes and their methods used in developing this app
 
 ## Flow diagrams
 
+
+### delete order
+
+
 ![Blank diagram - Color (4)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/d8c2288e-f6f7-48ab-9a17-91138a5f6ec8)
 
+This is the flow diagram for the delete method inside the CheckOrder class. The method first checks if the user has selected a row (order). If so, it uses a for loop in which the database is connected and the orders are deleted according to their IDs. After performing the for loop, a MDDialog shows up, telling the user that the order has been deleted. 
+
+
+
+### get_items
 
 ![Blank diagram - Color (5)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/97624cde-ed2b-44e0-99b9-1a99c1ecf4f3)
+
+The get_items method is used to get all the items from the database in order to generate the dropdown menu used when the user selects which item to add to the order in AddOrder class. The method first connects to the database, defines items as the result of the search, and menu_items as an empty list. Then it uses a for loop to get all the names of the item from the item variable. Another for loop is used to generate a dicitonary for the dropdown menu with all the names appended. Finally, a dropdown menu will pop up, allowing the user to select an item. 
+
+
+
+### try_signup
 
 
 ![Blank diagram - Color (3)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/38b62483-0197-48fb-888e-21bfe7245ead)
 
+This method is called when the user tries to signup. It first defines upass, cpass, and email. Then, it uses a series of elif statements to confirm if the password policy is met. If so, two queries will be ran to check in the database if the email or username has been used. If not, the user information will be inserted into the database, followed by a pop up window saying that registration is complete. 
 
 ## Test plan
 
