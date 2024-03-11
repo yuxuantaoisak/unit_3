@@ -70,15 +70,13 @@ _Fig. 3_
 
 ## UML diagram
 
-
-![Screenshot 2024-03-10 at 2 00 13](https://github.com/yuxuantaoisak/unit_3/assets/144768397/ee68352c-808f-411d-a222-98fc819fbb9e)
+![Blank diagram - Color (2)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/3cfe411e-4db7-42d0-8d8f-37df5f605535)
 
 _Fig. 4_
 
 *Fig. 4* is UML diagram shows the classes and their methods used in developing this application. The lines and arrows illustrate the inheritance relationship. Most of the classes used in the application either inherit from MDScreen class or MDApp class. 
 
 
-![Blank diagram - Color (2)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/3cfe411e-4db7-42d0-8d8f-37df5f605535)
 
 
 ## Flow diagrams
@@ -89,7 +87,11 @@ _Fig. 4_
 
 ![Blank diagram - Color (4)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/d8c2288e-f6f7-48ab-9a17-91138a5f6ec8)
 
-This is the flow diagram for the delete method inside the CheckOrder class. The method first checks if the user has selected a row (order). If so, it uses a for loop in which the database is connected and the orders are deleted according to their IDs. After performing the for loop, a MDDialog shows up, telling the user that the order has been deleted. 
+_Fig. 5_
+
+
+
+*Fig. 5* is the flow diagram for the delete method inside the CheckOrder class. The method first checks if the user has selected a row (order). If so, it uses a for loop in which the database is connected and the orders are deleted according to their IDs. After performing the for loop, a MDDialog shows up, telling the user that the order has been deleted. 
 
 
 
@@ -97,7 +99,10 @@ This is the flow diagram for the delete method inside the CheckOrder class. The 
 
 ![Blank diagram - Color (5)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/97624cde-ed2b-44e0-99b9-1a99c1ecf4f3)
 
-The get_items method is used to get all the items from the database in order to generate the dropdown menu used when the user selects which item to add to the order in AddOrder class. The method first connects to the database, defines items as the result of the search, and menu_items as an empty list. Then it uses a for loop to get all the names of the item from the item variable. Another for loop is used to generate a dicitonary for the dropdown menu with all the names appended. Finally, a dropdown menu will pop up, allowing the user to select an item. 
+_Fig. 6_
+
+
+In *Fig. 6*, The get_items method is used to get all the items from the database in order to generate the dropdown menu used when the user selects which item to add to the order in AddOrder class. The method first connects to the database, defines items as the result of the search, and menu_items as an empty list. Then it uses a for loop to get all the names of the item from the item variable. Another for loop is used to generate a dicitonary for the dropdown menu with all the names appended. Finally, a dropdown menu will pop up, allowing the user to select an item. 
 
 
 
@@ -106,7 +111,13 @@ The get_items method is used to get all the items from the database in order to 
 
 ![Blank diagram - Color (3)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/38b62483-0197-48fb-888e-21bfe7245ead)
 
-This method is called when the user tries to signup. It first defines upass, cpass, and email. Then, it uses a series of elif statements to confirm if the password policy is met. If so, two queries will be ran to check in the database if the email or username has been used. If not, the user information will be inserted into the database, followed by a pop up window saying that registration is complete. 
+
+
+_Fig. 7_
+
+
+
+In *Fig. 7*, the try_signup method is called when the user tries to signup. It first defines upass, cpass, and email. Then, it uses a series of elif statements to confirm if the password policy is met. If so, two queries will be ran to check in the database if the email or username has been used. If not, the user information will be inserted into the database, followed by a pop up window saying that registration is complete. 
 
 
 
@@ -326,6 +337,8 @@ try:
 
 After confirming that all requirements are met, the try block was used to insert the information, including username, email, password, and admin status into the database "project_3.db" using the DatabaseBridge class. The password is encrypted by the get_hash method I imported. The admin status is automatically set as 0, or false (the SQLite database does not accept Boolean value, so I had to use 0 and 1 to represent true and false), since this is the signup page for normal users. Then, a pop up window will show that the user has successfully signed up. The window will automatically jumps to login page after that.
 
+
+
 ### get_hash
 
 As shown above, the password entered by the user during registration is stored into the database after being encrypted by a method called get_hash. 
@@ -437,10 +450,10 @@ Also, the LoginPage.admin class variable is defined as True if the user logs in 
 
 
 
-_Fig. 1_
+_Fig. 8_
 
 
-**Fig. 1** is a snapshot of the user entity in the database. As shown in the photo, the passwords are encrypted so that they won't get leaked even if people outside the company see this page, making the users' information more secure. Also, the admin status is recorded as either 0 or 1.
+**Fig. 8** is a snapshot of the user entity in the database. As shown in the photo, the passwords are encrypted so that they won't get leaked even if people outside the company see this page, making the users' information more secure. Also, the admin status is recorded as either 0 or 1.
 
 
 ### change_page method
@@ -515,11 +528,11 @@ In the get_items class, used the search attribute from the DatabaseBridge class 
 
 <img width="365" alt="Screenshot 2024-03-07 at 18 05 01" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/01d22c5e-91c8-4bf1-91ba-273fc6b83489">
 
-_Fig. 2_
+_Fig. 9_
 
 
 
-**Fig. 2** shows the dropdown menu from the UI. 
+**Fig. 9** shows the dropdown menu from the UI. 
 
 
 Note that the KivyMD part of this code is omitted. Check the MDDropDownMenu element in the kivy file section. 
@@ -557,6 +570,8 @@ The choose date method helps user picking a date when the order is received, eff
 On this page, I designed a table where the user can check all the orders. When they finish mailing an order, they can choose to delete it from the list. 
 
 <img width="380" alt="Screenshot 2024-03-08 at 0 13 16" src="https://github.com/yuxuantaoisak/unit_3/assets/144768397/5de2ceab-e747-49e4-83aa-ec9b9f10efd1">
+
+_Fig. 10_
 
 The picture demonstrates what the table looks like in the GUI. 
 
