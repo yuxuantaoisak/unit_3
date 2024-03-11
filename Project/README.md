@@ -575,6 +575,35 @@ _Fig. 10_
 
 The picture demonstrates what the table looks like in the GUI. 
 
+### on_pre_enter
+
+```.py
+
+    def on_pre_enter(self, *args):
+        column_names = [('id', 40), ('customer_name', 30),
+                        ('items_purchased', 80), ('amount', 40),
+                        ('address', 50), ('time_purchased', 40), ('signature', 120)]
+        self.data_table = MDDataTable(
+            size_hint=(.4, .5),
+            pos_hint={'center_x': .5, 'top': .8},
+            use_pagination=True,
+            check=True,
+            background_color_header='#689ebd',
+            background_color_cell='#689ebd',
+            column_data=column_names
+        )
+        self.data_table.bind(on_row_press=self.row_pressed)
+        self.data_table.bind(on_check_press=self.checkbox_pressed)
+        self.add_widget(self.data_table)
+        self.update()
+
+```
+
+The `on_pre_enter` method initializes the UI table and the data before the page is shown, configuring its size, position, pagination, checkboxes, and column names. Event handlers are bound to the table for row and checkbox presses. Finally, the table is added to the application's widget hierarchy to be displayed on the screen, and the update method is called to refresh the widget in order to display the correct value. 
+
+
+
+
 ### Deleting order
 
 ```.py
