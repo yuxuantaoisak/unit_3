@@ -699,6 +699,29 @@ FitImage:
 
 ```
 
+### MDTextField
+
+MDTextField is a KivyMD widget that allows the user to input text or data. It plays an important role in my application since there are several cases in which the user input is needed, such as add order. 
+
+
+```.kv
+
+MDTextField:
+    id: email
+    icon_left: "email"
+    hint_text: "Enter email"
+    helper_text_mode: "on_error"
+    size_hint: .8, .1
+    pos_hint:{"center_x": .5}
+
+```
+
+In the example above, the textfield is defined with the ID of "email", with other attributes like icon and hint_text. The attribute `helper_text_mode` is set to "on_error" so it only appears where there is an error as a guildline or hint to the user. The other attributes, size_hint and pos_hint indicate the relative size and position of this textfield. 
+
+
+
+
+
 ### MDDialog
 
 To make the application interactive and let the user aware of what's happening, I used a MDDialog which is a KivyMD box component. 
