@@ -46,20 +46,26 @@ Lastly, I chose SQLite as the database for the application. SQLite is a relation
 
 ![Screenshot 2024-03-07 at 23 40 14](https://github.com/yuxuantaoisak/unit_3/assets/144768397/7f39006b-09a3-4ee9-a61f-a26daf536ce6)
 
-The above diagram illustrates the system, its parts, inputs, and output. The relationships between them are shown as well. The application takes user input from the keyboard and mouse, the computer details and the software it's running are included in the diagram. The python environment is PyCharm, in which two coding languages, python and KivyMD are ran. They interact with the relational database "project_3.db" inside the PyCharm environment. The output is displayed on a screen. 
+_Fig. 1_
+
+*Fig. 1* illustrates the system, its parts, inputs, and output. The relationships between them are shown as well. The application takes user input from the keyboard and mouse, the computer details and the software it's running are included in the diagram. The python environment is PyCharm, in which two coding languages, python and KivyMD are ran. They interact with the relational database "project_3.db" inside the PyCharm environment. The output is displayed on a screen. 
 
 ## Wireframe diagram
 
 ![Screenshot 2024-03-10 at 0 43 27](https://github.com/yuxuantaoisak/unit_3/assets/144768397/da86f3b9-3220-4d35-8793-6e16e34b3ca7)
 
-This is the wireframe diagram that shows the switch between screens in my application. The arrows and lines show which screen the application will switch to after pressing the button. 
+_Fig. 2_
+
+*Fig. 2* is the wireframe diagram that shows the switch between screens in my application. The arrows and lines show which screen the application will switch to after pressing the button. 
 
 
 ## ER diagram
 
 ![Screenshot 2024-03-10 at 1 20 29](https://github.com/yuxuantaoisak/unit_3/assets/144768397/a96a79da-247e-4db4-bb44-f157278487de)
 
-This ER diagram shows the tables in the database "project_3.db" and there relationships. As indicated, the table "orders" has 7 columns: id, customer_name, item_purchased, time_purchased, signature, address, amount. The other two tables have columns with specific data types like "text" and "int". The diagram also shows the relationship between items and orders: one order has one item. 
+_Fig. 3_
+
+*Fig. 3* is ER diagram shows the tables in the database "project_3.db" and there relationships. As indicated, the table "orders" has 7 columns: id, customer_name, item_purchased, time_purchased, signature, address, amount. The other two tables have columns with specific data types like "text" and "int". The diagram also shows the relationship between items and orders: one order has one item. 
 
 
 ## UML diagram
@@ -67,7 +73,9 @@ This ER diagram shows the tables in the database "project_3.db" and there relati
 
 ![Screenshot 2024-03-10 at 2 00 13](https://github.com/yuxuantaoisak/unit_3/assets/144768397/ee68352c-808f-411d-a222-98fc819fbb9e)
 
-This UML diagram shows the classes and their methods used in developing this application. The lines and arrows illustrate the inheritance relationship. Most of the classes used in the application either inherit from MDScreen class or MDApp class. 
+_Fig. 4_
+
+*Fig. 4* is UML diagram shows the classes and their methods used in developing this application. The lines and arrows illustrate the inheritance relationship. Most of the classes used in the application either inherit from MDScreen class or MDApp class. 
 
 
 ![Blank diagram - Color (2)](https://github.com/yuxuantaoisak/unit_3/assets/144768397/3cfe411e-4db7-42d0-8d8f-37df5f605535)
