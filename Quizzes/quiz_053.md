@@ -1,6 +1,0 @@
-## Solution
-
-
-
-## Proof of work
-
