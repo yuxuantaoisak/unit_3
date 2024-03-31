@@ -1,4 +1,0 @@
-## Solution
-
-
-## Proof of work
